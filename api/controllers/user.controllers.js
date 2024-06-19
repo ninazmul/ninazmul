@@ -11,15 +11,6 @@ export const updateUser = async (req, res, next) => {
     password,
     username,
     email,
-    number,
-    age,
-    bloodGroup,
-    address,
-    education,
-    facebook,
-    linkedIn,
-    website,
-    sdg,
     profilePicture,
   } = req.body;
 
@@ -51,18 +42,6 @@ export const updateUser = async (req, res, next) => {
 
   if (email && !/\S+@\S+\.\S+/.test(email)) {
     return next(errorHandler(400, "Invalid email format!"));
-  }
-
-  if (number && !/^\d+$/.test(number)) {
-    return next(errorHandler(400, "Phone number can only contain digits!"));
-  }
-
-  if (age && (!Number.isInteger(Number(age)) || age <= 0)) {
-    return next(errorHandler(400, "Age must be a positive integer!"));
-  }
-
-  if (bloodGroup && !/^(A|B|AB|O)[+-]$/.test(bloodGroup)) {
-    return next(errorHandler(400, "Invalid blood group format!"));
   }
 
   try {
@@ -153,35 +132,4 @@ export const getUser = async (req, res, next) => {
   }
 };
 
-export const getCommittee = async (req, res, next) => {
-  try {
-    const designationToExclude = "General Member";
-    const designationOrder = [
-      "President",
-      "Vice President",
-      "General Secretary",
-      "Joint General Secretary",
-      "Organizing Secretary",
-      "Treasurer",
-      "Public Relation Secretary",
-      "Executive Member",
-    ];
-
-    const users = await User.find({
-      designation: { $ne: designationToExclude },
-      isVolunteer: true,
-    });
-
-    users.sort((a, b) => {
-      return (
-        designationOrder.indexOf(a.designation) -
-        designationOrder.indexOf(b.designation)
-      );
-    });
-
-    res.status(200).json({ users });
-  } catch (error) {
-    next(error);
-  }
-};
 

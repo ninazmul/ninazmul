@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./Pages/Home";
-import Events from "./Pages/Events";
 import About from "./Pages/About";
 import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
@@ -17,6 +16,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import Search from "./Pages/Search";
 import TermsAndConditions from "./Pages/TermsAndConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Projects from "./Pages/Projects";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/sign-in" element={<Signin />} />
           <Route path="/sign-up" element={<Signup />} />

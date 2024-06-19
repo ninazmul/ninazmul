@@ -5,6 +5,7 @@ import CallToAction from "../Components/CallToAction";
 import CommentSection from "../Components/CommentSection";
 import PostCard from "../Components/PostCard";
 import Loading from "../Components/Loading";
+import ReactPlayer from "react-player";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -18,16 +19,18 @@ export default function PostPage() {
       try {
         setLoading(true);
         const res = await fetch(`/api/post/getPosts?slug=${postSlug}`);
-        const data = await res.json();
         if (!res.ok) {
-          setError(true);
-          setLoading(false);
-          return;
+          throw new Error("Failed to fetch post data");
+        }
+        const data = await res.json();
+        if (data.posts.length === 0) {
+          throw new Error("Post not found");
         }
         setPost(data.posts[0]);
         setLoading(false);
         setError(false);
       } catch (error) {
+        console.error("Error fetching post:", error);
         setError(true);
         setLoading(false);
       }
@@ -38,13 +41,14 @@ export default function PostPage() {
   useEffect(() => {
     const fetchRecentPosts = async () => {
       try {
-        const res = await fetch(`/api/post/getPosts?category=event&limit=3`);
-        const data = await res.json();
-        if (res.ok) {
-          setRecentPosts(data.posts);
+        const res = await fetch(`/api/post/getPosts?category=project&limit=3`);
+        if (!res.ok) {
+          throw new Error("Failed to fetch recent posts");
         }
+        const data = await res.json();
+        setRecentPosts(data.posts);
       } catch (error) {
-        console.log(error.message);
+        console.error("Error fetching recent posts:", error);
       }
     };
     fetchRecentPosts();
@@ -52,33 +56,62 @@ export default function PostPage() {
 
   if (loading) return <Loading />;
 
+  if (error || !post) {
+    return (
+      <main className="p-3 flex flex-col items-center justify-center h-screen">
+        <h1 className="text-3xl mb-4 font-serif">
+          Oops! Something went wrong.
+        </h1>
+        <p className="text-lg">Please try again later.</p>
+      </main>
+    );
+  }
+
+  const isVideo =
+    post.file &&
+    (post.file.endsWith(".mp4") ||
+      post.file.endsWith(".mov") ||
+      post.file.endsWith(".webm"));
+
   return (
     <main className="p-3 flex flex-col max-w-6xl mx-auto min-h-screen">
       <h1 className="text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
-        {post && post.title}
+        {post.title}
       </h1>
       <Link
-        to={`/search?category=${post && post.category}`}
+        to={`/search?category=${post.category}`}
         className="self-center mt-5"
       >
         <Button color="gray" pill size="xs">
-          {post && post.category}
+          {post.category}
         </Button>
       </Link>
-      <img
-        src={post && post.image}
-        alt={post && post.title}
-        className="mt-10 max-h-[600px] w-full object-cover bg-gray-500"
-      />
-      <div className="flex justify-between items-center p-4 border-b border-green-900 mx-auto w-full text-xs ">
-        <p>{post && new Date(post.createdAt).toLocaleDateString()}</p>
+      <div className="mt-10 w-full object-cover bg-gray-500">
+        {isVideo ? (
+          <ReactPlayer
+            url={post.file}
+            width="100%"
+            height="100%"
+            controls
+            style={{ objectFit: "cover" }}
+          />
+        ) : (
+          <img
+            src={post.file}
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
+        )}
+      </div>
+      <div className="flex justify-between items-center p-4 border-b border-green-900 mx-auto w-full text-xs">
+        <p>{new Date(post.createdAt).toLocaleDateString()}</p>
         <p className="italic">
-          {post && (post.content.length / 1000).toFixed(0)} mins read
+          {(post.content.length / 1000).toFixed(0)} mins read
         </p>
       </div>
       <div
         className="p-3 mx-auto overflow-x-auto w-full post-content text-justify"
-        dangerouslySetInnerHTML={{ __html: post && post.content }}
+        dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
       <div className="max-w-4xl mx-auto w-full">
         <CallToAction />

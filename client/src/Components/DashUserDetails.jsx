@@ -51,75 +51,9 @@ export default function DashUserDetails() {
               </div>
               <div className="flex flex-col gap-2">
                 <h2 className="text-sm lg:text-xl text-wrap ">
-                  Name:{" "}
-                  <span className="font-semibold font-serif">
-                    {userData.name}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap ">
                   Email:{" "}
                   <span className="font-semibold font-serif">
                     {userData.email}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap">
-                  Number:{" "}
-                  <span className="font-semibold font-serif">
-                    {userData.number}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap ">
-                  Age:{" "}
-                  <span className="font-semibold font-serif">
-                    {userData.age}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap">
-                  BloodGroup:{" "}
-                  <span className="font-semibold font-serif text-red-500">
-                    {userData.bloodGroup}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap ">
-                  Address:{" "}
-                  <span className="font-semibold font-serif">
-                    {userData.address}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap">
-                  Education:{" "}
-                  <span className="font-semibold font-serif">
-                    {userData.education}
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap">
-                  Facebook:{" "}
-                  <span className="font-semibold font-serif text-blue-500">
-                    <Link to={userData.facebook} target="_blank">
-                      {userData.facebook}
-                    </Link>
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap">
-                  LinkedIn:{" "}
-                  <span className="font-semibold font-serif text-blue-500">
-                    <Link to={userData.linkedIn} target="_blank">
-                      {userData.linkedIn}
-                    </Link>
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap">
-                  Website/Portfolio:{" "}
-                  <span className="font-semibold font-serif text-blue-500">
-                    <Link to={userData.website} target="_blank">
-                      {userData.website}
-                    </Link>
-                  </span>
-                </h2>
-                <h2 className="text-sm lg:text-xl text-wrap text-justify">
-                  Thoughts about SDG Goals: <br />
-                  <span className="font-semibold font-serif text-justify">
-                    {userData.sdg}
                   </span>
                 </h2>
               </div>

@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import prafulla from "../../public/Prafulla-ai.png";
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { useState } from "react";
 
@@ -10,6 +9,8 @@ import {
   signInFailure,
 } from "../redux/user/userSlice";
 import OAuth from "../Components/OAuth";
+import lightLogo from "/public/N.I. Logo croped.png";
+import darkLogo from "/public/N.I. Logo croped dark.webp";
 
 const Signin = () => {
   const [formData, setFormData] = useState({});
@@ -19,6 +20,8 @@ const Signin = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const { theme } = useSelector((state) => state.theme);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -51,15 +54,23 @@ const Signin = () => {
     }
   };
 
+  const logo = theme === "dark" ? lightLogo : darkLogo;
+
   return (
     <div className="min-h-screen">
       <div className="flex flex-col md:flex-row-reverse gap-10 p-4">
         {/* left side  */}
         <div className="flex flex-col items-center md:w-1/2">
           <Link to="/">
-            <img src={prafulla} alt="" className="h-28 lg:h-52" />
+            <img
+              src={logo}
+              alt="ninazmul"
+              className={`h-928 sm:h-32 ${
+                theme === "dark" ? "dark-class" : "light-class"
+              }`}
+            />
           </Link>
-          <h1 className="text-4xl flex items-center font-bold font-mono text-[#4c8e40]">
+          <h1 className="text-4xl flex items-center font-bold font-mono ">
             Welcome Back!
           </h1>
 
@@ -72,7 +83,7 @@ const Signin = () => {
         <div className="flex-1">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 p-4 lg:p-10 bg-gradient-to-r from-[#4c8e40] to-[#81b619] rounded-lg"
+            className="flex flex-col gap-4 p-4 lg:p-10 bg-gradient-to-r from-[#4d408e] to-[#150847] rounded-lg"
           >
             <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-mono text-center">
               Sign In Now!
@@ -97,7 +108,7 @@ const Signin = () => {
             </div>
             <Button
               outline
-              gradientDuoTone="greenToBlue"
+              gradientDuoTone="purpleToBlue"
               type="submit"
               className="text-xl font-semibold"
               disabled={loading}

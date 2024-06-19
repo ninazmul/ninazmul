@@ -139,7 +139,6 @@ export default function DashUsers() {
     }
   };
 
-
   return (
     <div>
       <div>
@@ -155,7 +154,6 @@ export default function DashUsers() {
                   <Table.HeadCell>User Image</Table.HeadCell>
                   <Table.HeadCell>User Name</Table.HeadCell>
                   <Table.HeadCell>User Email</Table.HeadCell>
-                  <Table.HeadCell>volunteer</Table.HeadCell>
                   <Table.HeadCell>Admin</Table.HeadCell>
                   <Table.HeadCell>Delete</Table.HeadCell>
                 </Table.Head>
@@ -165,18 +163,24 @@ export default function DashUsers() {
                       <Table.Cell>
                         {new Date(user.createdAt).toLocaleDateString()}
                       </Table.Cell>
-                      <Table.Cell><Link
-                            to={`/dashboard?tab=userDetails&userId=${user._id}`}
-                          >
-                        <img
-                          src={user.profilePicture}
-                          alt={user.username}
-                          className="w-10 h-10 object-cover rounded-full bg-gray-500"
-                        /></Link>
+                      <Table.Cell>
+                        <Link
+                          to={`/dashboard?tab=userDetails&userId=${user._id}`}
+                        >
+                          <img
+                            src={user.profilePicture}
+                            alt={user.username}
+                            className="w-10 h-10 object-cover rounded-full bg-gray-500"
+                          />
+                        </Link>
                       </Table.Cell>
-                      <Table.Cell><Link
-                            to={`/dashboard?tab=userDetails&userId=${user._id}`}
-                          >{user.username}</Link></Table.Cell>
+                      <Table.Cell>
+                        <Link
+                          to={`/dashboard?tab=userDetails&userId=${user._id}`}
+                        >
+                          {user.username}
+                        </Link>
+                      </Table.Cell>
                       <Table.Cell>{user.email}</Table.Cell>
                       <Table.Cell>
                         <Button
@@ -184,26 +188,7 @@ export default function DashUsers() {
                           pill
                           size="sm"
                           gradientDuoTone={
-                            user.isVolunteer ? "greenToBlue" : "pinkToOrange"
-                          }
-                          onClick={() =>
-                            handleToggleVolunteer(user._id, user.isVolunteer)
-                          }
-                        >
-                          {user.isVolunteer ? (
-                            <FaCheck color="green" />
-                          ) : (
-                            <FaTimes color="red" />
-                          )}
-                        </Button>
-                      </Table.Cell>
-                      <Table.Cell>
-                        <Button
-                          outline
-                          pill
-                          size="sm"
-                          gradientDuoTone={
-                            user.isAdmin ? "greenToBlue" : "pinkToOrange"
+                            user.isAdmin ? "purpleToBlue" : "pinkToOrange"
                           }
                           onClick={() =>
                             handleToggleAdmin(user._id, user.isAdmin)
@@ -230,155 +215,6 @@ export default function DashUsers() {
                     </Table.Row>
                   </Table.Body>
                 ))}
-              </Table>
-              {showMore && (
-                <button
-                  onClick={handleShowMore}
-                  className="w-full text-teal-500 self-center text-sm py-7 hover:underline"
-                >
-                  Show more
-                </button>
-              )}
-            </>
-          ) : (
-            <p>You have no users yet!</p>
-          )}
-          <div>
-            <Modal
-              show={showModal}
-              onClose={() => setShowModal(false)}
-              popup
-              size="md"
-            >
-              <Modal.Header />
-              <Modal.Body>
-                <div className="text-center">
-                  <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
-                  <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                    Are you sure you want to delete this user?
-                  </h3>
-                  <div className="flex justify-center gap-4">
-                    <Button color="failure" onClick={handleDeleteUser}>
-                      {"Yes, I'm sure"}
-                    </Button>
-                    <Button color="gray" onClick={() => setShowModal(false)}>
-                      No, cancel
-                    </Button>
-                  </div>
-                </div>
-              </Modal.Body>
-            </Modal>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h1 className="text-2xl lg:text-3xl mt-5 font-semibold font-serif text-center pb-4">
-          All volunteers
-        </h1>
-        <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-[#81b619] scrollbar-thumb-green-900 dark:scrollbar-track-[#4c8e40] dark:scrollbar-thumb-green-200">
-          {currentUser.isAdmin && users.length > 0 ? (
-            <>
-              <Table hoverable className="shadow-md">
-                <Table.Head>
-                  <Table.HeadCell>Date Created</Table.HeadCell>
-                  <Table.HeadCell>User Image</Table.HeadCell>
-                  <Table.HeadCell>User Name</Table.HeadCell>
-                  <Table.HeadCell>User Email</Table.HeadCell>
-                  <Table.HeadCell>Mobile Number</Table.HeadCell>
-                  <Table.HeadCell>volunteer</Table.HeadCell>
-                  <Table.HeadCell>Designation</Table.HeadCell>
-                  <Table.HeadCell>Delete</Table.HeadCell>
-                </Table.Head>
-                {users
-                  .filter((user) => user.isVolunteer)
-                  .map((user) => (
-                    <Table.Body key={user._id} className="divide-y">
-                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                        <Table.Cell>
-                          {new Date(user.createdAt).toLocaleDateString()}
-                        </Table.Cell>
-                        <Table.Cell>
-                          <Link
-                            to={`/dashboard?tab=userDetails&userId=${user._id}`}
-                          >
-                            <img
-                              src={user.profilePicture}
-                              alt={user.username}
-                              className="w-10 h-10 object-cover rounded-full bg-gray-500"
-                            />
-                          </Link>
-                        </Table.Cell>
-                        <Table.Cell>
-                          <Link
-                            to={`/dashboard?tab=userDetails&userId=${user._id}`}
-                          >
-                            {user.name}
-                          </Link>
-                        </Table.Cell>
-                        <Table.Cell>{user.email}</Table.Cell>
-                        <Table.Cell>{user.number}</Table.Cell>
-                        <Table.Cell>
-                          <Button
-                            outline
-                            pill
-                            size="sm"
-                            gradientDuoTone={
-                              user.isVolunteer ? "greenToBlue" : "pinkToOrange"
-                            }
-                          >
-                            {user.isVolunteer ? (
-                              <FaCheck color="green" />
-                            ) : (
-                              <FaTimes color="red" />
-                            )}
-                          </Button>
-                        </Table.Cell>
-                        <Table.Cell>
-                          <Select
-                            onChange={(e) => handleChange(e, user._id)}
-                            value={user.designation}
-                            className="w-full"
-                            id={`designation-${user._id}`}
-                          >
-                            <option value="President">President</option>
-                            <option value="Vice President">
-                              Vice President
-                            </option>
-                            <option value="General Secretary">
-                              General Secretary
-                            </option>
-                            <option value="Joint General Secretary">
-                              Joint General Secretary
-                            </option>
-                            <option value="Organizing Secretary">
-                              Organizing Secretary
-                            </option>
-                            <option value="Treasurer">Treasurer</option>
-                            <option value="Public Relation Secretary">
-                              Public Relation Secretary
-                            </option>
-                            <option value="Executive Member">
-                              Executive Member
-                            </option>
-                            <option value="General Member">
-                              General Member
-                            </option>
-                          </Select>
-                        </Table.Cell>
-                        <Table.Cell>
-                          <span
-                            onClick={() => {
-                              setShowModal(true);
-                              setUserIdToDelete(user._id);
-                            }}
-                            className="font-medium text-red-500 hover:underline cursor-pointer"
-                          >
-                            Delete
-                          </span>
-                        </Table.Cell>
-                      </Table.Row>
-                    </Table.Body>
-                  ))}
               </Table>
               {showMore && (
                 <button

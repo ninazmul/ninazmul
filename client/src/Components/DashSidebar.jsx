@@ -13,11 +13,11 @@ import { Link, useLocation } from "react-router-dom";
 import { signOutSuccess } from "../redux/user/userSlice";
 
 export default function DashSidebar() {
-    const location = useLocation();
+  const location = useLocation();
   const [tab, setTab] = useState("");
   const dispatch = useDispatch();
-  const { currentUser } = useSelector(state => state.user);
-  
+  const { currentUser } = useSelector((state) => state.user);
+
   const handleSignout = async () => {
     try {
       const res = await fetch("/api/user/signout", {
@@ -34,15 +34,15 @@ export default function DashSidebar() {
     }
   };
 
-    useEffect(() => {
-      const urlParams = new URLSearchParams(location.search);
-      const tabFromUrl = urlParams.get("tab");
-      if (tabFromUrl) {
-        setTab(tabFromUrl);
-      }
-    }, [location.search]);
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const tabFromUrl = urlParams.get("tab");
+    if (tabFromUrl) {
+      setTab(tabFromUrl);
+    }
+  }, [location.search]);
   return (
-    <Sidebar className="w-full md:w-56 rounded-none bg-gradient-to-r from-[#4c8e40] to-[#81b619]">
+    <Sidebar className="w-full md:w-56 rounded-none bg-gradient-to-r from-[#4d408e] to-[#150847]">
       <Sidebar.Items>
         <Sidebar.ItemGroup className="flex flex-col gap-1">
           {currentUser.isAdmin && (

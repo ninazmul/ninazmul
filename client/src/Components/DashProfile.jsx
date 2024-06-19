@@ -1,11 +1,4 @@
-import {
-  Alert,
-  Button,
-  Modal,
-  TextInput,
-  Textarea,
-  Select,
-} from "flowbite-react";
+import { Alert, Button, Modal, TextInput } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -26,9 +19,8 @@ import {
   deleteUserFailure,
   signOutSuccess,
 } from "../redux/user/userSlice";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { HiOutlineExclamationCircle, HiBadgeCheck } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { HiBadgeCheck } from "react-icons/hi";
 
 export default function DashProfile() {
   const { currentUser, error, loading } = useSelector((state) => state.user);
@@ -96,32 +88,10 @@ export default function DashProfile() {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSelectChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUpdateUserError(null);
     setUpdateUserSuccess(null);
-
-    const requiredFields = [
-      "name",
-      "number",
-      "age",
-      "bloodGroup",
-      "address",
-      "education",
-      "facebook",
-      "sdg",
-    ];
-
-    for (const field of requiredFields) {
-      if (!formData[field] && !currentUser[field]) {
-        setUpdateUserError("Please fill in all required fields.");
-        return;
-      }
-    }
 
     if (!imageFileUrl && !currentUser.profilePicture) {
       setUpdateUserError("Please upload a profile picture.");
@@ -229,7 +199,7 @@ export default function DashProfile() {
           <img
             src={imageFileUrl || currentUser.profilePicture}
             alt="user"
-            className={`rounded-full w-full h-full object-cover border-8 border-[#81b619] ${
+            className={`rounded-full w-full h-full object-cover border-8 border-[#44198f] ${
               imageFileUploadProgress &&
               imageFileUploadProgress < 100 &&
               "opacity-60"
@@ -241,9 +211,9 @@ export default function DashProfile() {
         )}
         <div className="flex items-center gap-1 justify-center">
           <h1 className="text-xl font-serif font-semibold text-center">
-            {currentUser.name && currentUser.name}
+            {currentUser.username}
           </h1>
-          <HiBadgeCheck className="text-xl text-blue-500"/>
+          <HiBadgeCheck className="text-xl text-blue-500" />
         </div>
         <TextInput
           type="text"
@@ -265,110 +235,9 @@ export default function DashProfile() {
           placeholder="Password"
           onChange={handleChange}
         />
-        <label className="text-xl font-semibold text-center">
-          To become a volunteer, please complete your profile.
-        </label>
-        <TextInput
-          type="text"
-          id="name"
-          placeholder="Your Name"
-          defaultValue={currentUser.name}
-          onChange={handleChange}
-          required
-        />
-        <TextInput
-          type="number"
-          id="number"
-          placeholder="Phone Number"
-          defaultValue={currentUser.number}
-          onChange={handleChange}
-          required
-        />
-        <div className="flex flex-wrap gap-4 justify-between">
-          <TextInput
-            type="number"
-            id="age"
-            placeholder="Age"
-            defaultValue={currentUser.age}
-            onChange={handleChange}
-            required
-          />
-          <Select
-            id="bloodGroup"
-            value={formData.bloodGroup || currentUser.bloodGroup || ""}
-            onChange={handleSelectChange}
-            required
-          >
-            <option value="">Select Blood Group</option>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-          </Select>
-        </div>
-        <TextInput
-          type="text"
-          id="address"
-          placeholder="Address"
-          defaultValue={currentUser.address}
-          onChange={handleChange}
-          required
-        />
-        <Select
-          id="education"
-          value={formData.education || currentUser.education || ""}
-          onChange={handleSelectChange}
-          required
-        >
-          <option value="">Select Education Level</option>
-          <option value="Secondary School Certificate">
-            Secondary School Certificate
-          </option>
-          <option value="Higher Secondary Certificate">
-            Higher Secondary Certificate
-          </option>
-          <option value="Bachelor's Degree">Bachelor's Degree</option>
-          <option value="Master's Degree">Master's Degree</option>
-          <option value="Doctorate">Doctorate</option>
-        </Select>
-        <TextInput
-          type="text"
-          id="facebook"
-          placeholder="Facebook Profile URL"
-          defaultValue={currentUser.facebook}
-          onChange={handleChange}
-          required
-        />
-        <TextInput
-          type="text"
-          id="linkedIn"
-          placeholder="LinkedIn Profile URL"
-          defaultValue={currentUser.linkedIn}
-          onChange={handleChange}
-        />
-        <TextInput
-          type="text"
-          id="website"
-          placeholder="Website/Portfolio URL"
-          defaultValue={currentUser.website}
-          onChange={handleChange}
-        />
-        <Textarea
-          type="text"
-          id="sdg"
-          placeholder="Your Thoughts on SDG Goals"
-          rows="3"
-          defaultValue={currentUser.sdg}
-          onChange={handleChange}
-          required
-        />
         <Button
           outline
-          gradientDuoTone="greenToBlue"
+          gradientDuoTone="purpleToBlue"
           type="submit"
           className="text-xl font-semibold"
           disabled={loading || imageFileUploading}
@@ -378,7 +247,7 @@ export default function DashProfile() {
         {currentUser.isAdmin && (
           <Link to={"/create-post"}>
             <Button
-              gradientDuoTone="greenToBlue"
+              gradientDuoTone="purpleToBlue"
               className="text-xl font-semibold w-full"
             >
               Create a Post

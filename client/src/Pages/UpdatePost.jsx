@@ -17,8 +17,8 @@ import { useSelector } from "react-redux";
 export default function UpdatePost() {
   const { currentUser } = useSelector((state) => state.user);
   const [file, setFile] = useState(null);
-  const [imageUploadProgress, setImageUploadProgress] = useState(null);
-  const [imageUploadError, setImageUploadError] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(null);
+  const [uploadError, setUploadError] = useState(null);
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
   const { postId } = useParams();
@@ -44,13 +44,13 @@ export default function UpdatePost() {
     }
   }, [postId]);
 
-  const handleUploadImage = async () => {
+  const handleUpload = async () => {
     try {
       if (!file) {
-        setImageUploadError("Please, Select an Image!");
+        setUploadError("Please, Select a file!");
         return;
       }
-      setImageUploadError(null);
+      setUploadError(null);
       const storage = getStorage(app);
       const fileName = new Date().getTime() + "-" + file.name;
       const storageRef = ref(storage, fileName);
@@ -60,23 +60,23 @@ export default function UpdatePost() {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setImageUploadProgress(progress.toFixed(0));
+          setUploadProgress(progress.toFixed(0));
         },
         (error) => {
-          setImageUploadError("Image upload failed!");
-          setImageUploadProgress(null);
+          setUploadError("File upload failed!");
+          setUploadProgress(null);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setImageUploadProgress(null);
-            setImageUploadError(null);
-            setFormData({ ...formData, image: downloadURL });
+            setUploadProgress(null);
+            setUploadError(null);
+            setFormData({ ...formData, file: downloadURL });
           });
         }
       );
     } catch (error) {
-      setImageUploadError("Image upload failed!");
-      setImageUploadProgress(null);
+      setUploadError("File upload failed!");
+      setUploadProgress(null);
     }
   };
 
@@ -87,7 +87,10 @@ export default function UpdatePost() {
         title: formData.title,
         content: formData.content,
         category: formData.category,
+        subCategory: formData.subCategory,
         image: formData.image,
+        github: formData.github,
+        live: formData.live,
       };
       const res = await fetch(
         `/api/post/updatepost/${postId}/${currentUser._id}`,
@@ -129,20 +132,32 @@ export default function UpdatePost() {
             value={formData.title}
           />
           <Select
+            value={formData.category}
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
             }
-            value={formData.category}
           >
             <option value="uncategorized">Select a category</option>
-            <option value="event">Event</option>
+            <option value="project">Project</option>
+            <option value="blog">Blog</option>
             <option value="banner">Banner</option>
+          </Select>
+          <Select
+            value={formData.subCategory}
+            onChange={(e) =>
+              setFormData({ ...formData, subCategory: e.target.value })
+            }
+          >
+            <option value="unsubcategorized">Select a Sub-Category</option>
+            <option value="programming">Programming</option>
+            <option value="voice">Voice</option>
+            <option value="graphics">Graphics</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-green-700 border-dotted p-3">
           <FileInput
             type="file"
-            accept="image/*"
+            accept="image/*, video/*" // Accept both image and video files
             onChange={(e) => setFile(e.target.files[0])}
           />
           <Button
@@ -150,29 +165,56 @@ export default function UpdatePost() {
             type="button"
             size="sm"
             outline
-            onClick={handleUploadImage}
-            disabled={imageUploadProgress}
+            onClick={handleUpload}
+            disabled={uploadProgress}
           >
-            {imageUploadProgress ? (
+            {uploadProgress ? (
               <div className="w-16 h-16">
                 <CircularProgressbar
-                  value={imageUploadProgress}
-                  text={`${imageUploadProgress || 0}%`}
+                  value={uploadProgress}
+                  text={`${uploadProgress || 0}%`}
                 />
               </div>
             ) : (
-              "Upload Image"
+              "Upload File"
             )}
           </Button>
         </div>
-        {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
-        {formData.image && (
-          <img
-            src={formData.image}
-            alt="upload"
-            className="w-full h-72 object-cover"
-          />
+        {uploadError && <Alert color="failure">{uploadError}</Alert>}
+        {formData.file && (
+          <>
+            {formData.file.type.startsWith("image/") ? (
+              <img
+                src={formData.file}
+                alt="upload"
+                className="w-full h-72 object-cover"
+              />
+            ) : (
+              <video controls className="w-full h-72 object-cover">
+                <source src={formData.file} type={formData.file.type} />
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </>
         )}
+        <div className="flex flex-col gap-4">
+          <TextInput
+            type="text"
+            placeholder="GitHub Link"
+            id="github"
+            value={formData.github}
+            onChange={(e) =>
+              setFormData({ ...formData, github: e.target.value })
+            }
+          />
+          <TextInput
+            type="text"
+            placeholder="Live Link"
+            id="live"
+            value={formData.live}
+            onChange={(e) => setFormData({ ...formData, live: e.target.value })}
+          />
+        </div>
         <ReactQuill
           theme="snow"
           placeholder="Write something..."

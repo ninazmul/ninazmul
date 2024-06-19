@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CustomCarousel from "./CustomCarousel";
-import logo from "../../public/Prafulla-ai.png";
+import logo from "../../public/N.I. Logo croped.png";
 
 export default function Banner() {
   const [posts, setPosts] = useState([]);

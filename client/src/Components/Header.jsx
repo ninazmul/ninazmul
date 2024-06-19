@@ -1,6 +1,7 @@
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
-import logo from "../../public/Prafulla-ai white.webp";
+import lightLogo from "/public/N.I. Logo croped.png";
+import darkLogo from "/public/N.I. Logo croped dark.webp";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ActiveLink from "./ActiveLink";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,11 +11,8 @@ import { signOutSuccess } from "../redux/user/userSlice";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiBadgeCheck } from "react-icons/hi";
 
-
-
 const Header = () => {
-  
-  const { currentUser } = useSelector(state => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -45,38 +43,45 @@ const Header = () => {
     }
   };
 
-    const navBtn = (
-        <ul className="md:flex md:gap-4 lg:gap-10 font-bold uppercase">
-            
-        <ActiveLink spy="true" smooth="true" to="/">
-          <li>Home </li>
-        </ActiveLink>
+  const navBtn = (
+    <ul className="md:flex md:gap-4 lg:gap-10 font-bold uppercase">
+      <ActiveLink spy="true" smooth="true" to="/">
+        <li>Home </li>
+      </ActiveLink>
 
-        <ActiveLink spy="true" smooth="true" to="/events">
-          <li>Events</li>
-        </ActiveLink>
+      <ActiveLink spy="true" smooth="true" to="/projects">
+        <li>Projects</li>
+      </ActiveLink>
 
-        <ActiveLink spy="true" smooth="true" to="/about">
-          <li>About Us</li>
-        </ActiveLink>
-      </ul>
-    );
-  
+      <ActiveLink spy="true" smooth="true" to="/about">
+        <li>About Me</li>
+      </ActiveLink>
+    </ul>
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("searchTerm", searchTerm);
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
-  }
+  };
+
+  const logo = theme === "dark" ? lightLogo : darkLogo;
 
   return (
     <Navbar
       fluid
-      className="bg-gradient-to-r from-[#4c8e40] to-[#81b619] rounded-none"
+      className=" rounded-none dark:bg-gradient-to-r from-[#100518] to-[#2c1356]"
     >
       <Link to="/">
-        <img src={logo} className="mr-3 h-10 sm:h-14" alt="Prafulla Logo" />
+        <img
+          src={logo}
+          alt="ninazmul"
+          className={`h-9 sm:h-12 ${
+            theme === "dark" ? "dark-class" : "light-class"
+          }`}
+        />
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
@@ -104,7 +109,7 @@ const Header = () => {
               arrowIcon={false}
               inline
               label={
-                currentUser.isVolunteer ? (
+                currentUser.isAdmin ? (
                   <div className="relative">
                     <Avatar
                       alt="user"
@@ -137,7 +142,7 @@ const Header = () => {
                 <Button
                   onClick={handleSignout}
                   outline
-                  gradientDuoTone="greenToBlue"
+                  gradientDuoTone="purpleToBlue"
                   className="text-xl font-semibold w-full"
                 >
                   Sign Out
@@ -150,7 +155,7 @@ const Header = () => {
             <Link to="/sign-in">
               <Button
                 outline
-                gradientDuoTone="greenToBlue"
+                gradientDuoTone="purpleToBlue"
                 className="font-semibold"
                 size="sm"
               >

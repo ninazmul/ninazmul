@@ -1,48 +1,48 @@
 import { Alert, Button, TextInput, Modal } from "flowbite-react";
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import Comment from './Comment';
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import Comment from "./Comment";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 export default function CommentSection({ postId }) {
-    const { currentUser } = useSelector(state => state.user);
-    const [comment, setComment] = useState('');
-    const [comments, setComments] = useState([]);
-    const [commentError, setCommentError] = useState(null);
-    const [commentsError, setCommentsError] = useState(null);
-    const navigate = useNavigate();
-    const [showModal, setShowModal] = useState(false);
-    const [commentToDelete, setCommentToDelete] = useState(null);
+  const { currentUser } = useSelector((state) => state.user);
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
+  const [commentError, setCommentError] = useState(null);
+  const [commentsError, setCommentsError] = useState(null);
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [commentToDelete, setCommentToDelete] = useState(null);
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      if (comment.length > 200) {
-        return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (comment.length > 200) {
+      return;
+    }
+    try {
+      const res = await fetch("/api/comment/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          content: comment,
+          postId,
+          userId: currentUser._id,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setComment("");
+        setCommentError(null);
+        setComments([data, ...comments]);
       }
-      try {
-        const res = await fetch("/api/comment/create", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            content: comment,
-            postId,
-            userId: currentUser._id,
-          }),
-        });
-        const data = await res.json();
-        if (res.ok) {
-          setComment("");
-          setCommentError(null);
-          setComments([data, ...comments]);
-        }
-      } catch (error) {
-        setCommentError(error.message);
-      }
-    };
-  
+    } catch (error) {
+      setCommentError(error.message);
+    }
+  };
+
   useEffect(() => {
     const getComments = async () => {
       try {
@@ -52,8 +52,8 @@ export default function CommentSection({ postId }) {
           setComments(data);
         }
       } catch (error) {
-        setCommentsError(error.message)
-      }  
+        setCommentsError(error.message);
+      }
     };
     getComments();
   }, [postId]);
@@ -61,7 +61,7 @@ export default function CommentSection({ postId }) {
   const handleLike = async (commentId) => {
     try {
       if (!currentUser) {
-        navigate("/sign-in")
+        navigate("/sign-in");
         return;
       }
       const res = await fetch(`/api/comment/likeComment/${commentId}`, {
@@ -69,13 +69,17 @@ export default function CommentSection({ postId }) {
       });
       if (res.ok) {
         const data = await res.json();
-        setComments(comments.map((comment) =>
-          comment._id === commentId ? {
-            ...comment,
-            likes: data.likes,
-            numberOfLikes: data.likes.length
-          } : comment
-        ))
+        setComments(
+          comments.map((comment) =>
+            comment._id === commentId
+              ? {
+                  ...comment,
+                  likes: data.likes,
+                  numberOfLikes: data.likes.length,
+                }
+              : comment
+          )
+        );
       }
     } catch (error) {
       console.log(error.message);
@@ -113,11 +117,11 @@ export default function CommentSection({ postId }) {
     setShowModal(false);
     try {
       if (!currentUser) {
-        navigate('/sign-in');
+        navigate("/sign-in");
         return;
       }
       const res = await fetch(`/api/comment/deleteComment/${commentId}`, {
-        method: 'DELETE'
+        method: "DELETE",
       });
       if (res.ok) {
         const data = await res.json();
@@ -175,7 +179,7 @@ export default function CommentSection({ postId }) {
               </p>
               <Button
                 outline
-                gradientDuoTone="greenToBlue"
+                gradientDuoTone="purpleToBlue"
                 type="submit"
                 className="text-xl font-semibold"
               >
@@ -237,7 +241,10 @@ export default function CommentSection({ postId }) {
               Are you sure you want to delete this comment?
             </h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={()=> handleDelete(commentToDelete)}>
+              <Button
+                color="failure"
+                onClick={() => handleDelete(commentToDelete)}
+              >
                 {"Yes, I'm sure"}
               </Button>
               <Button color="gray" onClick={() => setShowModal(false)}>
