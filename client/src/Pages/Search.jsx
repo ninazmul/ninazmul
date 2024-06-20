@@ -11,7 +11,6 @@ export default function Search() {
   });
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [showMore, setShowMore] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -25,25 +24,24 @@ export default function Search() {
       sort: sortFromUrl || "desc",
     });
 
-    const fetchPosts = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `/api/post/getPosts?${urlParams.toString()}&category=event`
-        );
-        if (!res.ok) throw new Error("Failed to fetch posts");
-        const data = await res.json();
-        setPosts(data.posts);
-        setShowMore(data.posts.length === 9);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPosts();
+    fetchPosts(urlParams);
   }, [location.search]);
+
+  const fetchPosts = async (params) => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `/api/post/getPosts?${params.toString()}&category=project`
+      );
+      if (!res.ok) throw new Error("Failed to fetch posts");
+      const data = await res.json();
+      setPosts(data.posts);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -61,26 +59,9 @@ export default function Search() {
     navigate(`/search?${urlParams.toString()}`);
   };
 
-  const handleShowMore = async () => {
-    const numberOfPosts = posts.length;
-    const urlParams = new URLSearchParams(location.search);
-    urlParams.set("startIndex", numberOfPosts);
-    try {
-      const res = await fetch(
-        `/api/post/getPosts?${urlParams.toString()}&category=event`
-      );
-      if (!res.ok) throw new Error("Failed to fetch more posts");
-      const data = await res.json();
-      setPosts((prevPosts) => [...prevPosts, ...data.posts]);
-      setShowMore(data.posts.length === 9);
-    } catch (error) {
-      console.error("Error fetching more posts:", error);
-    }
-  };
-
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
-      <div className="p-7 md: bg-gradient-to-r from-[#4d408e] to-[#150847] rounded-none md:w-1/4 lg:w-1/4">
+      <div className="p-7 md:bg-gradient-to-r from-[#4d408e] to-[#150847] rounded-none md:w-1/4 lg:w-1/4">
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <div className="flex flex-wrap items-center gap-2 w-full">
             <label className="text-white whitespace-nowrap font-semibold">
@@ -114,30 +95,18 @@ export default function Search() {
           </Button>
         </form>
       </div>
-      <div className="flex-1  w-full">
-        <h1 className="text-3xl font-semibold p-3 mt-5 text-center">
+      <div className="flex-1 w-full">
+        <h1 className="text-3xl lg:text-5xl font-semibold font-mono text-center py-8">
           Search results:
         </h1>
         <div className="p-4 flex flex-wrap gap-4 justify-evenly">
+          {loading && <Loading />}
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
-          )}
-          {loading && (
-            <div className="w-full">
-              <Loading />
-            </div>
           )}
           {!loading &&
             posts &&
             posts.map((post) => <PostCard key={post._id} post={post} />)}
-          {showMore && (
-            <button
-              onClick={handleShowMore}
-              className="text-teal-500 text-lg hover:underline p-7 w-full"
-            >
-              Show More
-            </button>
-          )}
         </div>
       </div>
     </div>

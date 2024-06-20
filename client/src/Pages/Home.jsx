@@ -13,7 +13,7 @@ const Home = () => {
       try {
         const res = await fetch("/api/post/getPosts");
         const data = await res.json();
-        // Filter posts to show only those in the "event" category
+        // Filter posts to show only those in the "project" category
         const eventPosts = data.posts.filter(
           (post) => post.category === "project"
         );
@@ -25,6 +25,55 @@ const Home = () => {
     };
     fetchPosts();
   }, []);
+
+  const renderPostsByCategory = () => {
+    // Initialize arrays for different categories
+    let programmingPosts = [];
+    let voicePosts = [];
+    let graphicsPosts = [];
+
+    // Categorize posts based on sub-category or other criteria
+    posts.forEach((post) => {
+      switch (post.subCategory) {
+        case "programming":
+          programmingPosts.push(post);
+          break;
+        case "voice":
+          voicePosts.push(post);
+          break;
+        case "graphics":
+          graphicsPosts.push(post);
+          break;
+        default:
+          break;
+      }
+    });
+
+    // Alternate rendering posts from different categories
+    let renderedPosts = [];
+    for (
+      let i = 0;
+      i <
+      Math.max(
+        programmingPosts.length,
+        voicePosts.length,
+        graphicsPosts.length
+      );
+      i++
+    ) {
+      if (programmingPosts[i]) {
+        renderedPosts.push(programmingPosts[i]);
+      }
+      if (voicePosts[i]) {
+        renderedPosts.push(voicePosts[i]);
+      }
+      if (graphicsPosts[i]) {
+        renderedPosts.push(graphicsPosts[i]);
+      }
+    }
+
+    return renderedPosts.map((post) => <PostCard key={post._id} post={post} />);
+  };
 
   return (
     <div className="min-h-screen px-4 md:px-8 lg:px-16 xl:32 2xl:px-64">
@@ -39,12 +88,10 @@ const Home = () => {
         {posts && posts.length > 0 && (
           <div className="flex flex-col gap-6">
             <h2 className="text-3xl lg:text-5xl font-semibold font-mono text-center py-8">
-              Recent Event Posts
+              Recent Projects
             </h2>
             <div className="flex flex-wrap gap-4 justify-center">
-              {posts.map((post) => (
-                <PostCard key={post._id} post={post} />
-              ))}
+              {renderPostsByCategory()}
             </div>
             {posts.length === 9 && (
               <Link

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
+import { Button } from "flowbite-react";
 
 export default function PostCard({ post }) {
   const isVideo =
@@ -9,7 +10,7 @@ export default function PostCard({ post }) {
       post.file.endsWith(".webm"));
 
   return (
-    <div className="group relative w-full border border-teal-500 hover:border-2 h-96 overflow-hidden rounded-lg sm:w-80 transition-all">
+    <div className="group relative w-full border border-teal-500 hover:border-2 h-96 overflow-hidden rounded-lg sm:w-80 transition-all glowP">
       <Link to={`/post/${post.slug}`}>
         {isVideo ? (
           <div className="relative h-[260px] w-full group-hover:h-[200px] transition-all duration-300 z-20">
@@ -34,9 +35,10 @@ export default function PostCard({ post }) {
         <p className="italic text-sm">{post.category}</p>
         <Link
           to={`/post/${post.slug}`}
-          className="z-10 group-hover:bottom-2 absolute bottom-[-200px] w-[calc(100%-1rem)] left-1/2 transform -translate-x-1/2 border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white transition-all duration-300 text-center py-2 rounded-md !rounded-tl-none font-semibold"
+          className="z-10 group-hover:bottom-2 absolute bottom-[-200px] w-[calc(100%-1rem)] left-1/2 transform -translate-x-1/2 transition-all duration-300"
         >
-          View Project
+          <Button gradientDuoTone="purpleToBlue"
+            className="text-xl font-semibold w-full rounded-tl-none flex items-center justify-center gap-2">View Project</Button>
         </Link>
       </div>
     </div>

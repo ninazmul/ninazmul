@@ -5,7 +5,6 @@ import CallToAction from "../Components/CallToAction";
 import CommentSection from "../Components/CommentSection";
 import PostCard from "../Components/PostCard";
 import Loading from "../Components/Loading";
-import ReactPlayer from "react-player";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -88,13 +87,15 @@ export default function PostPage() {
       </Link>
       <div className="mt-10 w-full object-cover bg-gray-500">
         {isVideo ? (
-          <ReactPlayer
-            url={post.file}
+          <iframe
+            title={post.title}
             width="100%"
             height="100%"
-            controls
+            src={post.file}
+            frameBorder="0"
+            allowFullScreen
             style={{ objectFit: "cover" }}
-          />
+          ></iframe>
         ) : (
           <img
             src={post.file}
@@ -121,7 +122,7 @@ export default function PostPage() {
       </div>
       <div className="flex flex-col justify-center items-center mb-5">
         <h1 className="text-2xl lg:text-3xl font-semibold font-serif text-center pt-4">
-          Recent Articles
+          Recent Projects
         </h1>
         <div className="flex flex-wrap gap-4 mt-5 justify-center">
           {recentPosts &&
