@@ -3,6 +3,7 @@ import CallToAction from "../Components/CallToAction";
 import { useEffect, useState } from "react";
 import PostCard from "../Components/PostCard";
 import Banner from "../Components/Banner";
+import MyServices from "../Components/MyServices";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
         const data = await res.json();
         // Filter posts to show only those in the "event" category
         const eventPosts = data.posts.filter(
-          (post) => post.category === "event"
+          (post) => post.category === "project"
         );
         // Limit to the first 9 posts
         setPosts(eventPosts.slice(0, 9));
@@ -26,10 +27,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="">
-        <Banner />
-      </div>
+    <div className="min-h-screen px-4 md:px-8 lg:px-16 xl:32 2xl:px-64">
+      <Banner />
+      <MyServices />
+
       <div className="p-3 bg-amber-100 dark:bg-slate-700">
         <CallToAction />
       </div>
@@ -37,7 +38,7 @@ const Home = () => {
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
         {posts && posts.length > 0 && (
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl lg:text-3xl font-semibold font-serif text-center pb-4">
+            <h2 className="text-3xl lg:text-5xl font-semibold font-mono text-center py-8">
               Recent Event Posts
             </h2>
             <div className="flex flex-wrap gap-4 justify-center">

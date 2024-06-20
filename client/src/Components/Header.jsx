@@ -72,7 +72,7 @@ const Header = () => {
   return (
     <Navbar
       fluid
-      className=" rounded-none dark:bg-gradient-to-r from-[#100518] to-[#2c1356]"
+      className=" rounded-none dark:bg-gradient-to-r from-[#100518] to-[#2c1356] px-4 md:px-8 lg:px-16 xl:32 2xl:px-64"
     >
       <Link to="/">
         <img
