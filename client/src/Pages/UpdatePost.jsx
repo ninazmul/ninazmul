@@ -25,29 +25,27 @@ export default function UpdatePost() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    try {
-      const fetchPost = async () => {
+    const fetchPost = async () => {
+      try {
         const res = await fetch(`/api/post/getposts?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
           setPublishError(data.message);
           return;
         }
-        if (res.ok) {
-          setPublishError(null);
-          setFormData(data.posts[0]);
-        }
-      };
-      fetchPost();
-    } catch (error) {
-      console.log(error.message);
-    }
+        setPublishError(null);
+        setFormData(data.posts[0]);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchPost();
   }, [postId]);
 
   const handleUpload = async () => {
     try {
       if (!file) {
-        setUploadError("Please, Select a file!");
+        setUploadError("Please, select a file!");
         return;
       }
       setUploadError(null);
@@ -88,7 +86,7 @@ export default function UpdatePost() {
         content: formData.content,
         category: formData.category,
         subCategory: formData.subCategory,
-        image: formData.image,
+        file: formData.file,
         github: formData.github,
         live: formData.live,
       };
@@ -97,7 +95,7 @@ export default function UpdatePost() {
         {
           method: "PUT",
           headers: {
-            "Content-Type": "Application/json",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(updatedData),
         }
@@ -112,6 +110,8 @@ export default function UpdatePost() {
       setPublishError("Something went wrong!!!");
     }
   };
+
+  const isVideo = file && file.type.startsWith("video");
 
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
@@ -157,7 +157,7 @@ export default function UpdatePost() {
         <div className="flex gap-4 items-center justify-between border-4 border-green-700 border-dotted p-3">
           <FileInput
             type="file"
-            accept="image/*, video/*" // Accept both image and video files
+            accept="image/*, video/*"
             onChange={(e) => setFile(e.target.files[0])}
           />
           <Button
@@ -181,22 +181,19 @@ export default function UpdatePost() {
           </Button>
         </div>
         {uploadError && <Alert color="failure">{uploadError}</Alert>}
-        {formData.file && (
-          <>
-            {formData.file.type.startsWith("image/") ? (
-              <img
-                src={formData.file}
-                alt="upload"
-                className="w-full h-72 object-cover"
-              />
-            ) : (
-              <video controls className="w-full h-72 object-cover">
-                <source src={formData.file} type={formData.file.type} />
-                Your browser does not support the video tag.
-              </video>
-            )}
-          </>
-        )}
+        {formData.file &&
+          (isVideo ? (
+            <video controls className="w-full h-72 object-cover">
+              <source src={formData.file} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={formData.file}
+              alt="Uploaded file preview"
+              className="w-full h-72 object-cover"
+            />
+          ))}
         <div className="flex flex-col gap-4">
           <TextInput
             type="text"
