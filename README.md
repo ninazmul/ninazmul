@@ -1,5 +1,7 @@
 <!-- ===================== BANNER ===================== -->
-![Banner](https://raw.githubusercontent.com/ninazmul/ninazmul/main/banner.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ninazmul/ninazmul/main/banner.png" alt="Banner" />
+</p>
 
 # Hi, I'm Nazmul 👋
 
