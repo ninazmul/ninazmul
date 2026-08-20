@@ -10,6 +10,11 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Available%20for%20Work-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Available for work" />
+</p>
+
+<p align="center">
+  <a href="https://wa.me/8801580845746"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
   <a href="https://www.facebook.com/ninazmul01"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/ninazmul"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="mailto:ninazmuldev@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -176,10 +181,15 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 ---
 
+## 📬 Let's Work Together
+
+I'm currently **available and open to freelance/contract work**. Reach out directly:
+
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" />
+  <a href="https://wa.me/8801580845746"><img src="https://img.shields.io/badge/Message%20on%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+  <a href="mailto:ninazmuldev@gmail.com"><img src="https://img.shields.io/badge/Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
 <p align="center">
   <i>Thanks for stopping by — let's build something great together.</i>
-</p>
+</p>Ï
