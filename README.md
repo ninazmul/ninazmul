@@ -157,7 +157,7 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 <p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=ninazmul&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=ninazmul&theme=radical&hide_border=true" alt="GitHub Streak" />
+  <img height="165" src="https://streak-stats.demolab.com/?user=ninazmul&theme=radical&hide_border=true" alt="GitHub Streak" />
 </p>
 
 <p align="center">
@@ -165,7 +165,7 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ninazmul&theme=redical&hide_border=true" alt="Contribution Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ninazmul&theme=react-dark&hide_border=true" alt="Contribution Graph" />
 </p>
 
 ---
