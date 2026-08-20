@@ -192,4 +192,4 @@ I'm currently **available and open to freelance/contract work**. Reach out direc
 
 <p align="center">
   <i>Thanks for stopping by — let's build something great together.</i>
-</p>Ï
+</p>
