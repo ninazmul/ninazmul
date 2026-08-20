@@ -182,4 +182,4 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 <p align="center">
   <i>Thanks for stopping by — let's build something great together.</i>
-</p>Ï
+</p>
