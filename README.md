@@ -160,18 +160,9 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 ## 📊 GitHub Stats
 
-<p align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=ninazmul&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="GitHub Stats" />
-  <img width="49%" src="https://streak-stats.demolab.com/?user=ninazmul&theme=radical&hide_border=true" alt="GitHub Streak" />
-</p>
-
-<p align="center">
-  <img width="90%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ninazmul&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
-</p>
-
-<p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=ninazmul&theme=react-dark&hide_border=true" alt="Contribution Graph" />
-</p>
+[![Profile Views](https://img.shields.io/badge/Profile_Views-Tracked-blue?style=for-the-badge&logo=github)](https://github.com/ninazmul)
+[![GitHub Streak](https://img.shields.io/badge/Streak-Active-success?style=for-the-badge&logo=git)](https://github.com/ninazmul)
+[![Top Languages](https://img.shields.io/badge/Languages-TypeScript%20%2F%20JavaScript%20%2F%20Python-informational?style=for-the-badge&logo=codeforces)](https://github.com/ninazmul)
 
 ---
 
