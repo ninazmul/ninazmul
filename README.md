@@ -164,9 +164,9 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 | Metric Category | Status / Live Data Indicator | Core Tech / Details |
 | :--- | :--- | :--- |
-| **🚀 Activity Status** | ![Status](https://img.shields.io/badge/Status-Active_%26_Coding-%232ea44f?style=flat-square&logo=github&logoColor=white) | Public & Private Commit Tracking Enabled |
-| **🔥 Streak Record** | ![Streak](https://img.shields.io/badge/Streak-Consistent_Daily-blue?style=flat-square&logo=git&logoColor=white) | Maintained via Git Workflows |
-| **💻 Primary Stack** | ![Languages](https://img.shields.io/badge/Focus-TypeScript_%2F_Next.js_%2F_Python-%23007ACC?style=flat-square&logo=typescript&logoColor=white) | Full-Stack Architecture |
+| **🚀 Activity Status** | ![Activity Status](https://img.shields.io/badge/Status-Active_%26_Coding-2ea44f?style=flat-square&logo=github&logoColor=white) | Public & Private Commit Tracking Enabled |
+| **🔥 Streak Record** | ![Streak Record](https://img.shields.io/badge/Streak-Consistent_Daily-blue?style=flat-square&logo=git&logoColor=white) | Maintained via Git Workflows |
+| **💻 Primary Stack** | ![Primary Stack](https://img.shields.io/badge/Focus-TypeScript_%2F_Next.js_%2F_Python-007ACC?style=flat-square&logo=typescript&logoColor=white) | Full-Stack Architecture |
 | **🏆 Contributions** | ![Contributions](https://img.shields.io/badge/Contributions-Production_Ready-orange?style=flat-square&logo=cplusplus&logoColor=white) | SaaS Platforms & Enterprise Tools |
 
 </div>
