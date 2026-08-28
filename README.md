@@ -158,11 +158,26 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 ---
 
-## 📊 GitHub Stats
+## 📊 GitHub Stats & Metrics
 
-[![Profile Views](https://img.shields.io/badge/Profile_Views-Tracked-blue?style=for-the-badge&logo=github)](https://github.com/ninazmul)
-[![GitHub Streak](https://img.shields.io/badge/Streak-Active-success?style=for-the-badge&logo=git)](https://github.com/ninazmul)
-[![Top Languages](https://img.shields.io/badge/Languages-TypeScript%20%2F%20JavaScript%20%2F%20Python-informational?style=for-the-badge&logo=codeforces)](https://github.com/ninazmul)
+<div align="center">
+
+| Metric Category | Status / Live Data Indicator | Core Tech / Details |
+| :--- | :--- | :--- |
+| **🚀 Activity Status** | ![Status](https://img.shields.io/badge/Status-Active_%26_Coding-%232ea44f?style=flat-square&logo=github&logoColor=white) | Public & Private Commit Tracking Enabled |
+| **🔥 Streak Record** | ![Streak](https://img.shields.io/badge/Streak-Consistent_Daily-blue?style=flat-square&logo=git&logoColor=white) | Maintained via Git Workflows |
+| **💻 Primary Stack** | ![Languages](https://img.shields.io/badge/Focus-TypeScript_%2F_Next.js_%2F_Python-%23007ACC?style=flat-square&logo=typescript&logoColor=white) | Full-Stack Architecture |
+| **🏆 Contributions** | ![Contributions](https://img.shields.io/badge/Contributions-Production_Ready-orange?style=flat-square&logo=cplusplus&logoColor=white) | SaaS Platforms & Enterprise Tools |
+
+</div>
+
+### 📈 Developer Breakdown
+
+| Repository Type | Count / Focus Area | Primary Frameworks |
+| :--- | :--- | :--- |
+| **SaaS & Web Apps** | High-Scale Architecture | Next.js, React, Node.js, PostgreSQL |
+| **API & Backend** | RESTful & Real-time Services | Express, Prisma, Redis, Python |
+| **Tooling & Scripts** | Automation & Utilities | TypeScript, Python, Docker |
 
 ---
 
