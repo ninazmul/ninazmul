@@ -1,12 +1,15 @@
+
 <!-- ===================== HEADER ===================== -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/ninazmul/ninazmul/main/banner.png" alt="Banner" width="100%" />
 </p>
 
-<h1 align="center">Hi, I'm Nazmul 👋</h1>
+<h1 align="center">Hi, I'm N.I. Nazmul 👋</h1>
+
+<p align="center"><strong>Founder &amp; Chief Architect — <a href="https://www.rizmec.com">RIZMEC</a></strong></p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+(Next.js+%2F+MERN);Building+scalable+SaaS+platforms;Backend+architecture+%26+API+design;Turning+ideas+into+production-ready+products" alt="Typing SVG" width="90%" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&lines=Founder+%26+Chief+Architect+at+RIZMEC;Full-Stack+Developer+%7C+Software+Engineer;AI+%26+Automation;Building+scalable+SaaS+platforms;From+Algorithms+to+Engineered+Intelligence" alt="Typing SVG" width="90%" />
 </p>
 
 <p align="center">
@@ -18,6 +21,7 @@
   <a href="https://www.facebook.com/ninazmul01"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/ninazmul"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="mailto:ninazmuldev@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://www.rizmec.com"><img src="https://img.shields.io/badge/Website-RIZMEC-0B6E99?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
   <a href="https://ninazmulworks.vercel.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
 </p>
 
@@ -29,11 +33,14 @@
 
 ## 👨‍💻 About Me
 
-I'm a Full-Stack Developer focused on building scalable, production-ready web applications and SaaS platforms.
+I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.com)**. I work across full-stack development, software engineering, AI, and automation, with a focus on building scalable, production-ready web applications and SaaS platforms.
 
-- 💼 Full-Stack Developer at **ArtistyCode Studio**
+**From Algorithms to Engineered Intelligence.**
+
+- 💼 Founder & Chief Architect at **[RIZMEC](https://www.rizmec.com)**
 - 💼 Senior Web Developer at **SA Creative Media**
 - 🧩 I specialize in backend architecture, API design, and modern frontend development with React and Next.js
+- 🤖 I explore practical AI integration and automation to build more capable software systems
 - 🎯 I care about performance, clean system design, and software that solves real-world problems
 
 <table>
@@ -44,7 +51,7 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 - 🔭 Building scalable SaaS-based e-commerce platforms
 - 🌱 Exploring Next.js and advanced backend architecture
 - 🧠 Improving system design and scalability patterns
-- 🏗️ Leading web initiatives at ArtistyCode Studio & SA Creative Media
+- 🏗️ Architecting and building software products at RIZMEC
 
 </td>
 <td valign="top" width="50%">
@@ -181,13 +188,13 @@ I'm a Full-Stack Developer focused on building scalable, production-ready web ap
 
 ## ⚡ Philosophy
 
-> Build systems that scale, interfaces that feel natural, and code that stays maintainable under pressure.
+> From Algorithms to Engineered Intelligence. Build systems that scale, interfaces that feel natural, and software that stays maintainable under pressure.
 
 ---
 
 ## 📬 Let's Work Together
 
-I'm currently **available and open to freelance/contract work**. Reach out directly:
+I'm open to meaningful **software engineering, SaaS, AI, and automation collaborations**. For professional inquiries, reach out directly or visit [RIZMEC](https://www.rizmec.com):
 
 <p align="center">
   <a href="https://wa.me/8801580845746"><img src="https://img.shields.io/badge/Message%20on%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
