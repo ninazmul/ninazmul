@@ -1,4 +1,3 @@
-
 <!-- ===================== HEADER ===================== -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/ninazmul/ninazmul/main/banner.png" alt="Banner" width="100%" />
@@ -9,20 +8,21 @@
 <p align="center"><strong>Founder &amp; Chief Architect — <a href="https://www.rizmec.com">RIZMEC</a></strong></p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&lines=Founder+%26+Chief+Architect+at+RIZMEC;Full-Stack+Developer+%7C+Software+Engineer;AI+%26+Automation;Building+scalable+SaaS+platforms;From+Algorithms+to+Engineered+Intelligence" alt="Typing SVG" width="90%" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&lines=Founder+%26+Chief+Architect+at+RIZMEC;Full-Stack+Developer+%7C+Senior+Web+Developer;Next.js+%7C+React+%7C+TypeScript+%7C+MERN;AI-Augmented+Software+Engineering;Building+scalable%2C+secure%2C+production-ready+apps" alt="Typing SVG" width="90%" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Available%20for%20Work-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Available for work" />
+  <img src="https://img.shields.io/badge/Open%20for%20Opportunities%20%26%20Consulting-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Open for opportunities" />
 </p>
 
 <p align="center">
   <a href="https://wa.me/8801580845746"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+  <a href="https://t.me/ninazmul"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" /></a>
   <a href="https://www.facebook.com/ninazmul01"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/ninazmul"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:ninazmuldev@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="mailto:ninazmul@rizmec.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   <a href="https://www.rizmec.com"><img src="https://img.shields.io/badge/Website-RIZMEC-0B6E99?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
-  <a href="https://ninazmulworks.vercel.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://www.rizmec.com/p/ninazmul"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
 </p>
 
 <p align="center">
@@ -33,38 +33,54 @@
 
 ## 👨‍💻 About Me
 
-I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.com)**. I work across full-stack development, software engineering, AI, and automation, with a focus on building scalable, production-ready web applications and SaaS platforms.
+I'm **N.I. Nazmul**, a Full-Stack Developer and Senior Web Developer specializing in **Next.js, React, TypeScript, and the MERN stack**. I'm the Founder & Chief Architect of **[RIZMEC](https://www.rizmec.com)**, where I lead end-to-end development: system architecture, database design, secure API development, deployment, optimization, and ongoing product improvement.
 
-**From Algorithms to Engineered Intelligence.**
+My work spans CMS, CRM, LMS, ERP, e-commerce platforms, dashboards, and custom web applications, always with a focus on scalability, security, performance, and user experience.
 
-- 💼 Founder & Chief Architect at **[RIZMEC](https://www.rizmec.com)**
-- 💼 Senior Web Developer at **SA Creative Media**
-- 🧩 I specialize in backend architecture, API design, and modern frontend development with React and Next.js
-- 🤖 I explore practical AI integration and automation to build more capable software systems
-- 🎯 I care about performance, clean system design, and software that solves real-world problems
+Beyond code, I'm also a **professional voice-over & dubbing artist and spokesperson** working in Bengali, Hindi, and English.
+
+- 💼 Founder & Chief Architect at **[RIZMEC](https://www.rizmec.com)** (Oct 2024 – Present)
+- 💼 Senior Web Developer at **SA Creative Media** (Jun 2023 – Present)
+- 🎓 Web Development Instructor at **Octal Technical Training Institute** (Nov 2026 – Present)
+- 🧩 Backend architecture, REST API design, authentication & RBAC, and modern frontend with React and Next.js
+- 🤖 AI-augmented engineering: using AI tooling for implementation, debugging, refactoring, research, and delivery
+- 📍 Dhaka, Bangladesh
 
 <table>
 <tr>
 <td valign="top" width="50%">
 
 ### 🚀 What I Do
-- 🔭 Building scalable SaaS-based e-commerce platforms
-- 🌱 Exploring Next.js and advanced backend architecture
-- 🧠 Improving system design and scalability patterns
-- 🏗️ Architecting and building software products at RIZMEC
+- 🏗️ Architect and ship production web apps at RIZMEC (15+ delivered)
+- 🔐 Build reusable RBAC and workflow modules
+- ⚙️ Manage production infrastructure: Linux VPS, Nginx, PM2, CI/CD
+- 🧑‍🏫 Teach web development: HTML, CSS, JavaScript, and project workflows
 
 </td>
 <td valign="top" width="50%">
 
 ### 🤝 Open to Collaborate On
 - SaaS products & startups
-- High-scale backend systems
-- Open-source infrastructure tools
-- Full-stack product development
+- ERP / CRM / LMS / CMS platforms
+- E-commerce systems
+- Technical advisory & consulting
 
 </td>
 </tr>
 </table>
+
+---
+
+## 🧱 Featured Projects
+
+| Project | What it is | Stack |
+| :--- | :--- | :--- |
+| **[Daily Muktimarg](https://dailymuktimarg.com/)** | News & media CMS with dual Bengali calendar, homepage layout builder, and granular RBAC | Next.js 16, TypeScript, MongoDB, Clerk, TipTap |
+| **[Grihinir Bari](https://grihinirbari.com/)** | E-commerce platform and admin dashboard with secure order management and COD delivery | Next.js 16, React 19, MongoDB, Clerk, UploadThing |
+| **[Qorvan](https://www.houseofqorvan.com/)** | Storefront and admin system with variant selectors, inventory control, COD and coupons | Next.js, TypeScript, MongoDB, UploadThing |
+| **[Hormuzan Foundation](https://hormuzanfoundation.org/)** | Community welfare and transparent-philanthropy platform with multi-locale support | Next.js, MongoDB, Clerk, TipTap |
+
+More at **[rizmec.com/p/ninazmul](https://www.rizmec.com/p/ninazmul)**.
 
 ---
 
@@ -97,6 +113,7 @@ I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 ![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
@@ -111,8 +128,9 @@ I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -120,7 +138,6 @@ I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
-![CodeIgniter](https://img.shields.io/badge/CodeIgniter-%23EF4223.svg?style=for-the-badge&logo=codeIgniter&logoColor=white)
 
 </details>
 
@@ -129,27 +146,22 @@ I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.
 <br>
 
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+![PM2](https://img.shields.io/badge/PM2-2B037A?style=for-the-badge&logo=pm2&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux%20VPS-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
-![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
-![GitLab CI](https://img.shields.io/badge/gitlab%20CI-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
-![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
-![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
-![Esbuild](https://img.shields.io/badge/esbuild-%23FFCF00.svg?style=for-the-badge&logo=esbuild&logoColor=black)
 
 </details>
 
 <details>
-<summary><b>Design & Data</b></summary>
+<summary><b>Design & Media</b></summary>
 <br>
 
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
@@ -157,48 +169,47 @@ I'm **N.I. Nazmul**, Founder & Chief Architect of **[RIZMEC](https://www.rizmec.
 ![Adobe Premiere Pro](https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white)
 ![Adobe Audition](https://img.shields.io/badge/Adobe%20Audition-9999FF.svg?style=for-the-badge&logo=Adobe%20Audition&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
 </details>
 
 ---
 
-## 📊 GitHub Stats & Metrics
+## 🧭 Experience
 
-| Metric Category | Status Indicator | Core Details |
+| Role | Organization | Period |
 | :--- | :--- | :--- |
-| **🚀 Activity** | ![Activity Status](https://img.shields.io/badge/Status-Active_%26_Coding-2ea44f?style=flat-square&logo=github&logoColor=white) | Public & Private Commit Tracking Enabled |
-| **🔥 Streak** | ![Streak Record](https://img.shields.io/badge/Streak-Consistent_Daily-blue?style=flat-square&logo=git&logoColor=white) | Maintained via Git Workflows |
-| **💻 Stack** | ![Primary Stack](https://img.shields.io/badge/Focus-TypeScript_%2F_Next.js_%2F_Python-007ACC?style=flat-square&logo=typescript&logoColor=white) | Full-Stack Architecture |
-| **🏆 Metrics** | ![Contributions](https://img.shields.io/badge/Contributions-Production_Ready-orange?style=flat-square&logo=cplusplus&logoColor=white) | SaaS Platforms & Enterprise Tools |
+| Web Development Instructor | Octal Technical Training Institute | Nov 2026 – Present |
+| Founder & Chief Architect | RIZMEC | Oct 2024 – Present |
+| Senior Web Developer | SA Creative Media | Jun 2023 – Present |
+| Full-Stack Developer (Contract) | Academic Bridge | May 2025 – Apr 2026 |
+| Full-Stack Developer (Internship) | IT Training BD | Jul 2024 – Sep 2024 |
 
----
+**Highlights:** architected the AB Partner Portal, a multi-role ERP with RBAC, automated offer letters, and certificate generation (30% faster API responses); built an LMS from scratch with MERN + TypeScript (40% query optimization); built reusable RBAC and workflow modules that cut client onboarding time by 25%.
 
-## 📈 Developer Breakdown
+## 🎓 Education & Certifications
 
-| Repository Type | Focus Area & Scale | Primary Frameworks |
-| :--- | :--- | :--- |
-| **SaaS & Apps** | High-Scale Architecture | Next.js, React, Node.js, PostgreSQL |
-| **API & Backend** | RESTful & Real-time Services | Express, Prisma, Redis, Python |
-| **Tooling & Scripts** | Automation & Utilities | TypeScript, Python, Docker |
+- Bangladesh Open University — Undergraduate Studies (ongoing)
+- Data Structures and Algorithms — Phitron (2026)
+- Software Engineer — HackerRank (2026)
+- Problem Solving (Basic) — HackerRank (2025)
 
 ---
 
 ## ⚡ Philosophy
 
-> From Algorithms to Engineered Intelligence. Build systems that scale, interfaces that feel natural, and software that stays maintainable under pressure.
+> Build systems that scale, interfaces that feel natural, and software that stays maintainable under pressure.
 
 ---
 
 ## 📬 Let's Work Together
 
-I'm open to meaningful **software engineering, SaaS, AI, and automation collaborations**. For professional inquiries, reach out directly or visit [RIZMEC](https://www.rizmec.com):
+I'm open to opportunities, consulting, and technical advisory engagements. Reach out directly or visit [RIZMEC](https://www.rizmec.com):
+
+📧 [ninazmul@rizmec.com](mailto:ninazmul@rizmec.com) · 💬 [WhatsApp](https://wa.me/8801580845746) · ✈️ [Telegram](https://t.me/ninazmul) · 🎮 Discord: `n.i.nazmul`
 
 <p align="center">
   <a href="https://wa.me/8801580845746"><img src="https://img.shields.io/badge/Message%20on%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
-  <a href="mailto:ninazmuldev@gmail.com"><img src="https://img.shields.io/badge/Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="mailto:ninazmul@rizmec.com"><img src="https://img.shields.io/badge/Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
 <p align="center">
