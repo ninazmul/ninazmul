@@ -51,7 +51,7 @@ Beyond code, I'm also a **professional voice-over & dubbing artist and spokesper
 <td valign="top" width="50%">
 
 ### 🚀 What I Do
-- 🏗️ Architect and ship production web apps at RIZMEC (15+ delivered)
+- 🏗️ Architect and ship production web apps at RIZMEC (30+ delivered)
 - 🔐 Build reusable RBAC and workflow modules
 - ⚙️ Manage production infrastructure: Linux VPS, Nginx, PM2, CI/CD
 - 🧑‍🏫 Teach web development: HTML, CSS, JavaScript, and project workflows
